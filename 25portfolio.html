@@ -92,8 +92,29 @@
              <div id="demo" class="collapse">
                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
              </div>
-          <script>
+<br><br>
+             <div>
+            <form name="myform">
+              <input type="text" placeholder="Username" name="Username">
+              <input type="text" placeholder="password" name="password">
+              <input type="submit" onclick="return validateForm()">
+            </form>
+             </div>
 
+
+          <script>
+              function validateForm(){
+                let x = document.forms ['myform']['Username'].value;
+                let y = document.forms ['myform']['password'].value;
+                if (x == "" && y == ""){
+                  alert("Error");
+                  return false;
+                }
+                else{
+                  setTimeout(validateForm, 3000)
+                  alert('login successful')
+                }
+              }
                   let x=5;
                   let y=6;
                   let sum=x+y;
@@ -135,6 +156,12 @@
             function CalculateGrade(p1, p2) 
             {return p1 * p2;}
             let result = CalculateGrade(x, y);
+          </script>
+          <button id="ChangeTextBtn"></p>
+          <p id="DisplayText"></p>
+          <script>
+            document.getElementById("ChangeTextBtn")("DisplayText").innerHTML = "Hello World!";
+            addEventListener("ChangeTextBtn")
           </script>
         </body>
     </html>
